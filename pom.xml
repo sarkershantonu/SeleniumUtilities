@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.automation</groupId>
+    <artifactId>selenium-utilities</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <activiti.version>5.19.0.1</activiti.version>
+        <selenium.version>2.53.0</selenium.version>
+        <appium.version>3.4.1</appium.version>
+        <saucelab.version>2.1.21</saucelab.version>
+        <surefire.version>2.19.1</surefire.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <allure.version>1.5.0.RC2</allure.version>
+        <aspectj.version>1.8.8</aspectj.version>
+        <allure.maven.plugin.version>2.5</allure.maven.plugin.version>
+    </properties>
+
+
+</project>
