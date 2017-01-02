@@ -11,6 +11,8 @@
 
     <modules>
         <module>Angular Utilities</module>
+        <module>Saucelab</module>
+        <module>Appium</module>
     </modules>
     <properties>
         <activiti.version>5.19.0.1</activiti.version>
