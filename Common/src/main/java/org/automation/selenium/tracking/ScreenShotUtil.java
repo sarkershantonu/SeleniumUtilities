@@ -4,6 +4,7 @@ package org.automation.selenium.tracking;
 import org.apache.commons.io.FileUtils;
 
 import org.automation.selenium.core.SeleniumUtilBase;
+import org.automation.selenium.property.PropertyUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -53,7 +54,7 @@ public class ScreenShotUtil extends SeleniumUtilBase {
         if(!new PageUtil(this.driver).isPageLoaded()){
             File srcFile = ((TakesScreenshot) executor).getScreenshotAs(OutputType.FILE);
             try{
-                FileUtils.copyFile(srcFile,screenShot);
+                FileUtils.copyFile(srcFile,screenShot);PageUtil
             } catch (IOException e) {
                 //todo default exception managemebt
             }
@@ -154,31 +155,4 @@ public class ScreenShotUtil extends SeleniumUtilBase {
         return this;
     }
 
-//************** Bottom items are using Ashot********************//
-    /**
-     * Take screenshot with Ashot
-     * @param element
-     * @param name
-     */
-    public ScreenShotUtil takeScreenShotByAshot(WebElement element, String name){
-        AShot aShot = new AShot();
-        Screenshot screenshot = aShot.takeScreenshot(this.driver,element);
-        saveImage(name,screenshot.getImage());
-        return this;
-    }
-    /***
-     * This will waiti 500ms(default) to scroll and take full screenshot
-     * This view point, you need to change based on application behavior
-     * @param name
-     */
-    public ScreenShotUtil takeFullScreenByAshot(String name){
-
-        return takeFullScreenByAshot(name, 500);
-
-    }
-
-
-    public ScreenShotUtil takeFullScreenByAshot(String name, int scrollTimeout){
-        return saveImage(name, new AShot().shootingStrategy(ShootingStrategies.viewportPasting(scrollTimeout)).takeScreenshot(this.driver).getImage());
-    }
 }

@@ -1,7 +1,6 @@
 package org.automation.selenium.browser.security;
 
 import lombok.Getter;
-import org.automation.selenium.SeleniumUtilBase;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 

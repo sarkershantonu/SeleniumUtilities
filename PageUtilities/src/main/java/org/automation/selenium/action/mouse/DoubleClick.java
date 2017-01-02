@@ -2,7 +2,7 @@ package org.automation.selenium.action.mouse;
 
 
 import org.automation.selenium.browser.Browser;
-import org.automation.selenium.page.PageBase;
+import org.automation.selenium.core.PageBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 

@@ -1,4 +1,4 @@
-package org.automation.selenium.page;
+package org.automation.selenium.core;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -17,7 +17,7 @@
         <module>Browser</module>
         <module>JavaScriptUtis</module>
         <module>PageValidations</module>
-        <module>SeleniumCommon</module>
+        <module>Common</module>
         <module>PageUtilities</module>
     </modules>
     <properties>
@@ -33,6 +33,15 @@
     </properties>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok-maven-plugin</artifactId>
+                    <version>1.16.8.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -44,6 +53,23 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-maven-plugin</artifactId>
+            <version>1.16.8.0</version>
+            <configuration>
+                <encoding>UTF-8</encoding>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>testDelombok</goal>
+                        <goal>delombok</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
         </plugins>
     </build>
 <dependencies>

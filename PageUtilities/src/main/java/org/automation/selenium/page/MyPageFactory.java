@@ -1,6 +1,7 @@
 package org.automation.selenium.page;
 
 import lombok.extern.slf4j.Slf4j;
+import org.automation.selenium.core.PageBase;
 
 import java.util.HashMap;
 import java.util.Map;
