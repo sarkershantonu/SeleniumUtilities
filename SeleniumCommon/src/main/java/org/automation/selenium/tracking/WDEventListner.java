@@ -1,6 +1,7 @@
 package org.automation.selenium.tracking;
 
-import org.automation.selenium.SeleniumUtilBase;
+
+import org.automation.selenium.core.SeleniumUtilBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

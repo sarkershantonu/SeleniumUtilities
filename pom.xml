@@ -32,7 +32,26 @@
         <allure.maven.plugin.version>2.5</allure.maven.plugin.version>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <compilerVersion>1.8</compilerVersion>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 <dependencies>
+    <dependency>
+        <groupId>net.lightbody.bmp</groupId>
+        <artifactId>browsermob-proxy</artifactId>
+        <version>2.0.0</version>
+    </dependency>
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
@@ -44,6 +63,36 @@
         <version>${selenium.version}</version>
         <scope>compile</scope>
     </dependency>
+    <dependency>
+        <groupId>com.github.detro</groupId>
+        <artifactId>phantomjsdriver</artifactId>
+        <version>1.2.0</version>
+    </dependency>
+    <dependency>
+        <groupId>com.saucelabs</groupId>
+        <artifactId>sauce_java_common</artifactId>
+        <version>${saucelab.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.saucelabs</groupId>
+        <artifactId>saucerest</artifactId>
+        <version>1.0.32</version>
+    </dependency>
+    <dependency>
+        <groupId>com.saucelabs</groupId>
+        <artifactId>sauce_junit</artifactId>
+        <version>${saucelab.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>io.appium</groupId>
+        <artifactId>java-client</artifactId>
+        <version>${appium.version}</version>
+    </dependency>
+    <dependency>
+    <groupId>ru.yandex.qatools.ashot</groupId>
+    <artifactId>ashot</artifactId>
+    <version>1.5.2</version>
+</dependency>
 
 </dependencies>
 </project>

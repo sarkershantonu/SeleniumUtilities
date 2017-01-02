@@ -10,6 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>selenium-common</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.automation</groupId>
+            <artifactId>browser</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
