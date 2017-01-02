@@ -1,4 +1,4 @@
-package org.automation.error;
+package org.automation.selenium.errors;
 
 /**
  * Created by shantonu on 4/15/16.

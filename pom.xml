@@ -18,6 +18,7 @@
         <module>JavaScriptUtis</module>
         <module>PageValidations</module>
         <module>SeleniumCommon</module>
+        <module>PageUtilities</module>
     </modules>
     <properties>
         <activiti.version>5.19.0.1</activiti.version>
