@@ -2,12 +2,8 @@ package org.automation.selenium.tracking;
 
 
 import org.apache.commons.io.FileUtils;
-import org.automation.selenium.SeleniumUtilBase;
-import org.automation.selenium.page.PageUtil;
-import org.automation.selenium.page.SourceUtil;
-import org.automation.utils.common.PropertyUtil;
-import org.automation.utils.config.ConfigHelper;
-import org.automation.utils.io.FileUtilities;
+
+import org.automation.selenium.core.SeleniumUtilBase;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
