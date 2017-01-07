@@ -19,6 +19,8 @@
         <module>PageValidations</module>
         <module>Common</module>
         <module>PageUtilities</module>
+        <module>BrowserUtilities</module>
+        <module>RemoteBrowser</module>
     </modules>
     <properties>
         <activiti.version>5.19.0.1</activiti.version>
