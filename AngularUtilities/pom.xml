@@ -21,6 +21,12 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+        <!--downloading angular files as jars from web -->
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>angular</artifactId>
+            <version>1.6.1</version>
+        </dependency>
     </dependencies>
 
 </project>
