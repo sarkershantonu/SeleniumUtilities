@@ -1,4 +1,4 @@
-package org.automation.selenium.browser.security;
+package org.automation.selenium.browser.crypto;
 
 import org.openqa.selenium.internal.Base64Encoder;
 

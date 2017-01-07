@@ -3,7 +3,7 @@ package org.automation.selenium.browser.remote;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
-import org.automation.selenium.browser.CapabilityFactory;
+import org.automation.selenium.browser.remote.inhouse.CapabilityFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 

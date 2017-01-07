@@ -1,4 +1,4 @@
-package org.automation.selenium.browser;
+package org.automation.selenium.browser.remote.inhouse;
 
 
 import org.automation.selenium.appium.AppiumCapabilities;
