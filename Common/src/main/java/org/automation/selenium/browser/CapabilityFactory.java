@@ -1,9 +1,6 @@
 package org.automation.selenium.browser;
 
 
-import org.automation.selenium.appium.AppiumCapabilities;
-import org.automation.selenium.browserstack.BrowserStackCapabilities;
-import org.automation.selenium.saucelab.SauceLabCapabilities;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
