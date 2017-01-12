@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>AngularUtilities</module>
         <module>Saucelab</module>
         <module>Appium</module>
         <module>BrowserStack</module>
