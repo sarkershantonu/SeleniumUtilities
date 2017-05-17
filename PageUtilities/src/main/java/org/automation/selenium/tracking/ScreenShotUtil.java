@@ -8,7 +8,7 @@ import org.automation.config.FileUtilities;
 import org.automation.selenium.core.SeleniumUtilBase;
 import org.automation.selenium.page.PageUtil;
 import org.automation.selenium.page.SourceUtil;
-import org.automation.selenium.property.PropertyUtil;
+import org.automation.property.PropertyUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;

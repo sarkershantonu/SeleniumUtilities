@@ -1,4 +1,4 @@
-package org.automation.selenium.model;
+package org.automation.model;
 
 /**
  * Created by shantonu on 1/7/17.

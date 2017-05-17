@@ -1,4 +1,4 @@
-package org.automation.selenium.property;
+package org.automation.property;
 
 /**
  * Created by shantonu on 1/6/17.

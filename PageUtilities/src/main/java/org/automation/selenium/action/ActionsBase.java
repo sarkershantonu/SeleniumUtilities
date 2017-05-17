@@ -3,7 +3,7 @@ package org.automation.selenium.action;
 
 import org.automation.selenium.browser.Browser;
 
-import org.automation.selenium.errors.PageNotFoundException;
+import org.automation.errors.PageNotFoundException;
 import org.automation.selenium.page.MyPageFactory;
 import org.automation.selenium.page.PageBase;
 import org.automation.selenium.tracking.Track;

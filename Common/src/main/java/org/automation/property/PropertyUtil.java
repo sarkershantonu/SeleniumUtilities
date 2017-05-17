@@ -1,4 +1,4 @@
-package org.automation.selenium.property;
+package org.automation.property;
 
 
 import java.io.*;
