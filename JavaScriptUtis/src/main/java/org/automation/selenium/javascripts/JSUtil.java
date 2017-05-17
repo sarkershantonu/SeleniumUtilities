@@ -3,7 +3,7 @@ package org.automation.selenium.javascripts;
 
 
 import org.automation.selenium.browser.local.Browser;
-import org.automation.selenium.core.SeleniumUtilBase;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;

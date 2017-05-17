@@ -8,10 +8,11 @@ import org.openqa.selenium.WebDriver;
  */
 public abstract class SeleniumUtilBase {
     protected WebDriver driver;
-    protected JavascriptExecutor jsRunner;
+    protected JavascriptExecutor executor;
 
     public SeleniumUtilBase(WebDriver aDriver) {
         this.driver = aDriver;
+        executor =(JavascriptExecutor) this.driver;
     }
 
 

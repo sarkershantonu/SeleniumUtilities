@@ -13,14 +13,10 @@
     <dependencies>
         <dependency>
             <groupId>org.automation</groupId>
-            <artifactId>selenium-common</artifactId>
+            <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>org.automation</groupId>
-            <artifactId>selenium-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
         <dependency>
             <groupId>org.automation</groupId>
             <artifactId>browser-utils</artifactId>

@@ -1,6 +1,7 @@
 package org.automation.selenium.browser.local;
 
-import org.automation.selenium.property.PropertyUtil;
+
+import org.automation.property.PropertyUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.edge.EdgeDriver;
