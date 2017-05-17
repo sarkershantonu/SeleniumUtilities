@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>BrowserUtilities</artifactId>
+    <artifactId>browser-utils</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.automation</groupId>
