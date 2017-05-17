@@ -1,7 +1,7 @@
 package org.automation.selenium.action;
 
 
-import org.automation.selenium.browser.Browser;
+import org.automation.selenium.browser.local.Browser;
 
 import org.automation.errors.PageNotFoundException;
 import org.automation.selenium.page.MyPageFactory;

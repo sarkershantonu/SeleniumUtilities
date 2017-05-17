@@ -1,5 +1,6 @@
 package org.automation.selenium.validation.pages;
 
+
 import org.automation.selenium.page.interfaces.CompletePage;
 import org.junit.Assert;
 

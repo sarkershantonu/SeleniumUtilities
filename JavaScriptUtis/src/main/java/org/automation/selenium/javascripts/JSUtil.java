@@ -2,6 +2,7 @@ package org.automation.selenium.javascripts;
 
 
 
+import org.automation.selenium.browser.SeleniumUtilBase;
 import org.automation.selenium.browser.local.Browser;
 
 import org.openqa.selenium.JavascriptExecutor;

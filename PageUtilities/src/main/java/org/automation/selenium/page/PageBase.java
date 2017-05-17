@@ -29,7 +29,7 @@ public abstract class PageBase {
         this.driver = Browser.getInstance();
         initElement(this);
     }
-    protected PageBase(WebDriver aDriver){
+    public PageBase(WebDriver aDriver){
         this.driver =aDriver;
         initElement(this);
     }
@@ -68,5 +68,9 @@ public abstract class PageBase {
         });
         return this;
     }
+
+    public abstract boolean isPageLoaded() ;
+
+    public abstract void waitForPageLoad();// this will have implementation here => todo
 }
 

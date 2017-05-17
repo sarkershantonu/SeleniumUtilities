@@ -5,8 +5,9 @@ import org.apache.commons.io.FileUtils;
 
 import org.automation.config.ConfigHelper;
 import org.automation.config.FileUtilities;
-import org.automation.selenium.core.SeleniumUtilBase;
-import org.automation.selenium.page.PageUtil;
+
+import org.automation.selenium.browser.SeleniumUtilBase;
+import org.automation.selenium.page.PageBase;
 import org.automation.selenium.page.SourceUtil;
 import org.automation.property.PropertyUtil;
 import org.openqa.selenium.OutputType;
@@ -46,13 +47,13 @@ public class ScreenShotUtil extends SeleniumUtilBase {
      * @return
      * // to do replace page util
      */
-    public ScreenShotUtil takeScreenShot(String name, boolean isError){
+    public <APAGE extends PageBase> ScreenShotUtil takeScreenShotOf(String name, boolean isError,APAGE aPage ){
         String imageName = getFileName(name,isError);
         StringBuilder fileNama = new StringBuilder(imageName);
         File screenShot = new File(fileNama.toString());
         screenShot.getParentFile().mkdir();
-        new PageUtil(this.driver).waitForPageLoad();
-        if(!new PageUtil(this.driver).isPageLoaded()){
+        aPage.waitForPageLoad();
+        if(aPage.isPageLoaded()){
             File srcFile = ((TakesScreenshot) executor).getScreenshotAs(OutputType.FILE);
             try{
                 FileUtils.copyFile(srcFile,screenShot);
