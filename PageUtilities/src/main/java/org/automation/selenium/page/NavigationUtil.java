@@ -1,7 +1,8 @@
 package org.automation.selenium.page;
 
 
-import org.automation.selenium.core.SeleniumUtilBase;
+
+import org.automation.selenium.browser.SeleniumUtilBase;
 import org.openqa.selenium.WebDriver;
 
 /**

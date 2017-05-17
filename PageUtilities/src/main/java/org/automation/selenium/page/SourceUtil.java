@@ -1,9 +1,11 @@
 package org.automation.selenium.page;
 
+import lombok.extern.java.Log;
 import org.apache.commons.io.IOUtils;
-import org.automation.selenium.SeleniumUtilBase;
-import org.automation.utils.tracking.errors.ExceptionManager;
-import org.automation.utils.tracking.errors.TestError;
+
+import org.automation.errors.ExceptionManager;
+import org.automation.errors.TestError;
+import org.automation.selenium.browser.SeleniumUtilBase;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
@@ -13,6 +15,7 @@ import java.io.InputStream;
 /**
  * Created by shantonu on 4/19/16.
  */
+@Log
 public class SourceUtil extends SeleniumUtilBase {
 
 

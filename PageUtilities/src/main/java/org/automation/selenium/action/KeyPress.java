@@ -1,7 +1,7 @@
 package org.automation.selenium.action;
 
 
-import org.automation.selenium.browser.Browser;
+import org.automation.selenium.browser.local.Browser;
 import org.automation.selenium.page.PageBase;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;

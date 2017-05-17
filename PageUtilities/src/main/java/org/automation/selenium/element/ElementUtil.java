@@ -1,8 +1,7 @@
 package org.automation.selenium.element;
 
-
-import org.automation.selenium.SeleniumUtilBase;
-import org.automation.selenium.browser.Browser;
+import org.automation.selenium.browser.SeleniumUtilBase;
+import org.automation.selenium.browser.local.Browser;
 import org.automation.selenium.javascripts.AJAXUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;

@@ -20,7 +20,7 @@ public class RemoteWDConnector extends Thread{
     public void run(){
 
         try {
-            RemoteWebDriver driver =  BrowserFactory.getDefaultRemoteDriver();
+            RemoteWebDriver driver = (RemoteWebDriver) BrowserFactory.getDefaultRemoteDriver();
             drivers.put(driver);
         } catch (InterruptedException e) {
             this.interrupt();

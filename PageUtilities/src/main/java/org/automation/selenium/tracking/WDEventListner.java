@@ -1,7 +1,8 @@
 package org.automation.selenium.tracking;
 
 
-import org.automation.selenium.core.SeleniumUtilBase;
+
+import org.automation.selenium.browser.SeleniumUtilBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,10 +20,26 @@ public class WDEventListner extends SeleniumUtilBase implements WebDriverEventLi
         super(aDriver);
     }
 
-    private void defaultSteps(String methodName){
-        new ScreenShotUtil(this.driver).takeFullScreenByAshot(methodName);
+    @Override
+    public void beforeAlertAccept(WebDriver webDriver) {
 
     }
+
+    @Override
+    public void afterAlertAccept(WebDriver webDriver) {
+
+    }
+
+    @Override
+    public void afterAlertDismiss(WebDriver webDriver) {
+
+    }
+
+    @Override
+    public void beforeAlertDismiss(WebDriver webDriver) {
+
+    }
+
     @Override
     public void beforeNavigateTo(String url, WebDriver driver) {
 
@@ -84,14 +101,15 @@ public class WDEventListner extends SeleniumUtilBase implements WebDriverEventLi
     }
 
     @Override
-    public void beforeChangeValueOf(WebElement element, WebDriver driver) {
+    public void beforeChangeValueOf(WebElement webElement, WebDriver webDriver, CharSequence[] charSequences) {
 
     }
 
     @Override
-    public void afterChangeValueOf(WebElement element, WebDriver driver) {
+    public void afterChangeValueOf(WebElement webElement, WebDriver webDriver, CharSequence[] charSequences) {
 
     }
+
 
     @Override
     public void beforeScript(String script, WebDriver driver) {

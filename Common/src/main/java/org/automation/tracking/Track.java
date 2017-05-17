@@ -1,4 +1,4 @@
-package org.automation.selenium.tracking;
+package org.automation.tracking;
 
 import java.util.ArrayList;
 import java.util.List;

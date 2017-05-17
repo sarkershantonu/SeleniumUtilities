@@ -50,12 +50,8 @@ public class SeleniumHub {
                     dr = remoteWebDrivers.take();
                 } catch (WebDriverException e) {
                     if (e.getMessage().contains("session cannot find")) {
-                        try {
-                            Thread.currentThread().interrupt();
-                            dr = BrowserFactory.getDefaultRemoteDriver();
-                        } catch (MalformedURLException e1) {
-                            e1.printStackTrace();
-                        }
+                        Thread.currentThread().interrupt();
+                        dr = BrowserFactory.getDefaultRemoteDriver();
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();

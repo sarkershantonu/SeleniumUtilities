@@ -111,4 +111,7 @@ public class BrowserFactory {
     }
 
 
+    public static WebDriver getDefaultRemoteDriver() {
+        return null;//todo
+    }
 }

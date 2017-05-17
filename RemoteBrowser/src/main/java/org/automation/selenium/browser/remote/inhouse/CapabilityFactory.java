@@ -1,9 +1,7 @@
 package org.automation.selenium.browser.remote.inhouse;
 
 
-import org.automation.selenium.appium.AppiumCapabilities;
-import org.automation.selenium.browserstack.BrowserStackCapabilities;
-import org.automation.selenium.saucelab.SauceLabCapabilities;
+
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -25,19 +23,7 @@ public class CapabilityFactory {
     public static DesiredCapabilities getCapability(String nameOfBrowser){
         capabilities = new DesiredCapabilities();
 
-        if(nameOfBrowser=="browserstack"){
-            BrowserStackCapabilities.getCapabilities(capabilities,"win7.ff41.1024x768");
-        }
-        else if(nameOfBrowser=="soucelab"){
-            SauceLabCapabilities.getCapabilities(capabilities,"iphone6.iphone.mobile");
-        }
-        else if(nameOfBrowser=="appium-android"){
-            AppiumCapabilities.getCapabilities(capabilities,"and41.htc1x.appium151.hybrid");
-        }
-        else if(nameOfBrowser=="appium-ios"){
-            AppiumCapabilities.getCapabilities(capabilities,"ops92.ipadretina.appium151.app");
-        }
-        else if(nameOfBrowser=="phantomjs"){
+        if(nameOfBrowser=="phantomjs"){
             capabilities = DesiredCapabilities.phantomjs();
             capabilities.setJavascriptEnabled(true);
             capabilities.setCapability("takesScreenshot", true);
@@ -58,9 +44,7 @@ public class CapabilityFactory {
         else if(nameOfBrowser=="remote-htmlunit"){
             capabilities = DesiredCapabilities.htmlUnit();
         }
-        else if(nameOfBrowser=="remote-htmljs"){
-            capabilities = DesiredCapabilities.htmlUnitWithJs();
-        }
+
         else if(nameOfBrowser=="remote-ie"){
             capabilities = DesiredCapabilities.internetExplorer();
         }

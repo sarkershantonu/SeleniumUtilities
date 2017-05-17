@@ -6,7 +6,7 @@ import org.automation.selenium.browser.local.Browser;
 import org.automation.errors.PageNotFoundException;
 import org.automation.selenium.page.MyPageFactory;
 import org.automation.selenium.page.PageBase;
-import org.automation.selenium.tracking.Track;
+import org.automation.tracking.Track;
 
 
 import java.util.ArrayList;

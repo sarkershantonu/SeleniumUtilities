@@ -1,7 +1,7 @@
 package org.automation.selenium.action.mouse;
 
 
-import org.automation.selenium.browser.Browser;
+import org.automation.selenium.browser.local.Browser;
 import org.automation.selenium.page.PageBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -17,7 +17,7 @@ public class DoubleClick<T extends PageBase> extends MouseBase<T> {
     }
 
     @Override
-    T on(WebElement element, int second) {
+    public T on(WebElement element, int second) {
         action = new Actions(Browser.getInstance());
         action.doubleClick(element);
         return page;
