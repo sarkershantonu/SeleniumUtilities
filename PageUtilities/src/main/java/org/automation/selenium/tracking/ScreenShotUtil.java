@@ -6,14 +6,12 @@ import org.apache.commons.io.FileUtils;
 import org.automation.config.ConfigHelper;
 import org.automation.config.FileUtilities;
 import org.automation.selenium.core.SeleniumUtilBase;
+import org.automation.selenium.page.PageUtil;
+import org.automation.selenium.page.SourceUtil;
 import org.automation.selenium.property.PropertyUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -48,7 +46,7 @@ public class ScreenShotUtil extends SeleniumUtilBase {
      * @return
      * // to do replace page util
      */
-   /* public ScreenShotUtil takeScreenShot(String name, boolean isError){
+    public ScreenShotUtil takeScreenShot(String name, boolean isError){
         String imageName = getFileName(name,isError);
         StringBuilder fileNama = new StringBuilder(imageName);
         File screenShot = new File(fileNama.toString());
@@ -57,7 +55,7 @@ public class ScreenShotUtil extends SeleniumUtilBase {
         if(!new PageUtil(this.driver).isPageLoaded()){
             File srcFile = ((TakesScreenshot) executor).getScreenshotAs(OutputType.FILE);
             try{
-                FileUtils.copyFile(srcFile,screenShot);PageUtil
+                FileUtils.copyFile(srcFile,screenShot);
             } catch (IOException e) {
                 //todo default exception managemebt
             }
@@ -66,7 +64,7 @@ public class ScreenShotUtil extends SeleniumUtilBase {
             screenShotByJS(imageName);
         }
         return this;
-    }*/
+    }
 
 
     /**

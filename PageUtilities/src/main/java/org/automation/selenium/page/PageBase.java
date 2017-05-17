@@ -1,8 +1,9 @@
-package org.automation.selenium.core;
+package org.automation.selenium.page;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.automation.selenium.browser.Browser;
+
+import org.automation.selenium.browser.local.Browser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;

@@ -1,4 +1,4 @@
-package org.automation.selenium;
+package org.automation.selenium.element;
 
 import org.openqa.selenium.WebElement;
 
