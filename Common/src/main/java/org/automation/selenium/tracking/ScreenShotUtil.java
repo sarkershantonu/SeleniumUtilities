@@ -44,8 +44,9 @@ public class ScreenShotUtil extends SeleniumUtilBase {
      * @param name
      * @param isError
      * @return
+     * // to do replace page util
      */
-    public ScreenShotUtil takeScreenShot(String name, boolean isError){
+   /* public ScreenShotUtil takeScreenShot(String name, boolean isError){
         String imageName = getFileName(name,isError);
         StringBuilder fileNama = new StringBuilder(imageName);
         File screenShot = new File(fileNama.toString());
@@ -63,7 +64,7 @@ public class ScreenShotUtil extends SeleniumUtilBase {
             screenShotByJS(imageName);
         }
         return this;
-    }
+    }*/
 
 
     /**

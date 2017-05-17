@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.automation</groupId>
-            <artifactId>browser</artifactId>
+            <artifactId>browser-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
