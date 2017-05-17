@@ -1,5 +1,6 @@
 package org.automation.selenium.browser;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -7,10 +8,14 @@ import org.openqa.selenium.WebDriver;
  */
 public abstract class SeleniumUtilBase {
     protected WebDriver driver;
+    protected JavascriptExecutor jsRunner;
+
+    public SeleniumUtilBase(WebDriver aDriver) {
+        this.driver = aDriver;
+    }
 
 
-
-    private SeleniumUtilBase(){
+    private SeleniumUtilBase() {
 
     }
 
