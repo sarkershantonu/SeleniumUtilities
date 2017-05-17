@@ -1,6 +1,6 @@
 package org.automation.selenium.browser.remote;
 
-import org.automation.selenium.browser.BrowserFactory;
+import org.automation.selenium.browser.local.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.RemoteWebDriver;

@@ -1,4 +1,4 @@
-package org.automation.selenium.browser;
+package org.automation.selenium.browser.local;
 
 
 import org.openqa.selenium.JavascriptExecutor;
