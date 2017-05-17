@@ -3,6 +3,8 @@ package org.automation.selenium.tracking;
 
 import org.apache.commons.io.FileUtils;
 
+import org.automation.config.ConfigHelper;
+import org.automation.config.FileUtilities;
 import org.automation.selenium.core.SeleniumUtilBase;
 import org.automation.selenium.property.PropertyUtil;
 import org.openqa.selenium.OutputType;
@@ -147,7 +149,7 @@ public class ScreenShotUtil extends SeleniumUtilBase {
     }
 
     private ScreenShotUtil saveImage(String name, BufferedImage image){
-        File output = new File(ScreenPath+name+"."+ConfigHelper.screenshotType);
+        File output = new File(ScreenPath+name+"."+ ConfigHelper.screenshotType);
         try {
             ImageIO.write(image,ConfigHelper.screenshotType,output);
         } catch (IOException e) {
