@@ -15,4 +15,5 @@ public abstract class HttpRequestDefault {
     protected boolean isFollowRedirection = false;
 
 
+
 }
