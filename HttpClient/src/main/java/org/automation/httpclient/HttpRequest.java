@@ -5,4 +5,14 @@ package org.automation.httpclient;
  */
 public abstract class HttpRequest {
 
+    protected String host;
+    protected String port;
+    protected boolean isHttps;
+    protected String path;
+    protected String encoding;
+    protected long timeout_connection = 3000;
+    protected long timeout_response = 3000;
+    protected boolean isFollowRedirection = false;
+
+
 }
