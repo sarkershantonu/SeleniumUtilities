@@ -1,4 +1,4 @@
-package org.automation.httpclient;
+package org.automation.httpclient.methods;
 
 /**
  * Created by shantonu on 7/10/17.
