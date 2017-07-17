@@ -6,6 +6,12 @@ Angular JS support is separated from these helpers.
 Its mmultimidule maven project. 
 Each mmodule represent different utilitie
 
+# Utilities Target 
+- Screenshot
+- Traces &Exception 
+- Log management 
+- Tracker Api
+
 
 # Screenshot util using html2canvas
 Its from https://github.com/niklasvh/html2canvas/releases
