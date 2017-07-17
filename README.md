@@ -11,6 +11,8 @@ Each mmodule represent different utilitie
 - Traces &Exception 
 - Log management 
 - Tracker Api
+- Web Gui Events
+- Web element 
 
 
 # Screenshot util using html2canvas
