@@ -14,6 +14,7 @@ Each mmodule represent different utilitie
 - Web Gui Events
 - Web element
 - WebDriver
+- property
 
 
 # Screenshot util using html2canvas
