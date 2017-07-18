@@ -8,7 +8,7 @@ Each mmodule represent different utilitie
 
 # Utilities Target 
 - Screenshot
-- Traces &Exception 
+- Traces & Exceptions 
 - Log management 
 - Tracker Api
 - Web Gui Events
