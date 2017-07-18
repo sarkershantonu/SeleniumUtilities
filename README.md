@@ -12,7 +12,8 @@ Each mmodule represent different utilitie
 - Log management 
 - Tracker Api
 - Web Gui Events
-- Web element 
+- Web element
+- WebDriver
 
 
 # Screenshot util using html2canvas
