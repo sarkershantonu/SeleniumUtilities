@@ -14,6 +14,6 @@ public abstract class HttpRequestDefault {
     protected long timeout_response = 3000;
     protected boolean isFollowRedirection = false;
 
-
+    public abstract void perform();
 
 }
