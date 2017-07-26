@@ -1,7 +1,12 @@
 package org.automation.httpclient;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.util.EntityUtils;
 import org.openqa.selenium.WebDriver;
+
+import java.io.IOException;
 
 /**
  * Created by shantonu on 7/10/17.
@@ -18,6 +23,8 @@ public abstract class HttpRequestDefault {
     protected boolean isFollowRedirection = false;
 
     protected HttpClient client;
+    protected HttpResponse response;
+    protected int httpResponseCode;
     public abstract void perform();
 
     protected WebDriver driver;
@@ -29,5 +36,8 @@ public abstract class HttpRequestDefault {
     protected String getUrl() {
         String protocol = (isHttps)?"https":"http";
         return protocol+"://"+host+":"+port+path;
+    }
+    protected String getContent(HttpEntity entity) throws IOException {
+        return EntityUtils.toString(entity);
     }
 }
