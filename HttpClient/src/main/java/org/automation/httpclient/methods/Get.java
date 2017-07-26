@@ -28,7 +28,6 @@ public class Get extends HttpRequestDefault {
         try {
             System.out.println(getUrl());
             response = client.execute(httpGet);
-            //System.out.println(Thread.activeCount());
 
         } catch (IOException e) {
 

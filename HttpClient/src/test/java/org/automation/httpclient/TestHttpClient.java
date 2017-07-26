@@ -30,11 +30,12 @@ public class TestHttpClient {
         browser.close();
     }
     @Test
-    public void testGet(){
-
+    public void testSingleGet(){
         arequest = new Get("https://demo.opencart.com");
-
         arequest.perform();
+    }
+    @Test
+    public void testMultiThreadedGet(){
         WebElementLinkFinder linkFinder = new WebElementLinkFinder(browser);
         List<String> links = linkFinder.getLinksFromAPage("https://demo.opencart.com");
         for (String url : links){
