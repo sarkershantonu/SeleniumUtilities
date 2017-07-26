@@ -1,5 +1,6 @@
 package org.automation.httpclient.methods;
 
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.automation.httpclient.HttpRequestDefault;
 
@@ -12,7 +13,10 @@ public class Get extends HttpRequestDefault {
     public void perform() {
 
         client = new DefaultHttpClient();
+        HttpGet httpGet = new HttpGet(getUrl());
 
 
     }
+
+
 }

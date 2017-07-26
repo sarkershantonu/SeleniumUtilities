@@ -26,4 +26,8 @@ public abstract class HttpRequestDefault {
         driver.manage().window().maximize();
 
     }
+    protected String getUrl() {
+        String protocol = (isHttps)?"https":"http";
+        return protocol+"://"+host+":"+port+path;
+    }
 }
