@@ -1,5 +1,7 @@
 package org.automation.httpclient;
 
+import org.openqa.selenium.WebDriver;
+
 /**
  * Created by shantonu on 7/10/17.
  */
@@ -16,4 +18,9 @@ public abstract class HttpRequestDefault {
 
     public abstract void perform();
 
+    protected WebDriver driver;
+
+    protected void iniBrowser(){
+        driver
+    }
 }
