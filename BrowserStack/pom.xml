@@ -27,5 +27,10 @@
         <artifactId>selenium-java</artifactId>
         <version>${selenium.version}</version>
     </dependency>
+    <dependency>
+        <groupId>io.appium</groupId>
+        <artifactId>java-client</artifactId>
+        <version>${appium.version}</version>
+    </dependency>
 </dependencies>
 </project>

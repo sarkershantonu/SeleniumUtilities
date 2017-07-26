@@ -1,8 +1,5 @@
 package org.automation.selenium.browser.remote;
 
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
-
 import org.automation.selenium.browser.remote.inhouse.CapabilityFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -37,18 +34,6 @@ public class RemoteBrowserFactory {
 
             try {
                 return new RemoteWebDriver(new URL(RemoteConfig.saucelabs_URL), CapabilityFactory.getCapability(browserCapability));
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-        } else if (provider == "appium-ios") {
-            try {
-                return new IOSDriver(new URL(RemoteConfig.appium_URL), CapabilityFactory.getCapability(browserCapability));
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-        } else if (provider == "appium-android") {
-            try {
-                return  new AndroidDriver(new URL(RemoteConfig.appium_URL), CapabilityFactory.getCapability(browserCapability));
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }

@@ -53,13 +53,6 @@ public abstract class HttpRequestDefault implements Runnable{
 
     public abstract int perform();
 
-
-    protected WebDriver driver;
-
-    protected void iniBrowser(){
-        driver.manage().window().maximize();
-
-    }
     protected String getUrl() {
 
         return(url==null)?baseUrl+path:url;

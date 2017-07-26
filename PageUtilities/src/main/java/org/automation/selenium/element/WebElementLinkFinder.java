@@ -1,4 +1,4 @@
-package org.automation.httpclient;
+package org.automation.selenium.element;
 
 
 import org.openqa.selenium.By;

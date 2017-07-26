@@ -9,27 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>page-utils</artifactId>
+    <artifactId>test-examples</artifactId>
     <dependencies>
         <dependency>
-            <groupId>org.automation</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.automation</groupId>
-            <artifactId>browser-utils</artifactId>
+            <artifactId>http-client</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.automation</groupId>
-            <artifactId>javascript-utils</artifactId>
+            <artifactId>page-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>ru.yandex.qatools.ashot</groupId>
-            <artifactId>ashot</artifactId>
-            <version>1.5.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

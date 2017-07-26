@@ -1,6 +1,7 @@
 package org.automation.httpclient;
 
 import org.automation.httpclient.methods.Get;
+import org.automation.selenium.element.WebElementLinkFinder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
