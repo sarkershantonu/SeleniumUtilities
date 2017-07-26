@@ -11,12 +11,36 @@ import java.io.IOException;
 /**
  * Created by shantonu on 7/10/17.
  */
-public abstract class HttpRequestDefault {
+public abstract class HttpRequestDefault implements Runnable{
 
-    protected String host;
-    protected String port;
-    protected boolean isHttps;
-    protected String path;
+    public HttpRequestDefault(String url){
+        this.url=url;
+    }
+    private String baseUrl;
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    private String path="/";
+    private String url;
+    public String getBaseUrl() {
+        return baseUrl;
+    }
+
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
+    }
+
+
     protected String encoding;
     protected long timeout_connection = 3000;
     protected long timeout_response = 3000;
@@ -24,10 +48,11 @@ public abstract class HttpRequestDefault {
 
     protected HttpClient client;
     protected HttpResponse response;
-    protected int httpResponseCode;
+
     protected HttpEntity entity;
 
-    public abstract void perform();
+    public abstract int perform();
+
 
     protected WebDriver driver;
 
@@ -36,8 +61,8 @@ public abstract class HttpRequestDefault {
 
     }
     protected String getUrl() {
-        String protocol = (isHttps)?"https":"http";
-        return protocol+"://"+host+":"+port+path;
+
+        return(url==null)?baseUrl+path:url;
     }
     protected String getContent() throws IOException {
         return EntityUtils.toString(entity);
