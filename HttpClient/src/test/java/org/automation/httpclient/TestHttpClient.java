@@ -40,7 +40,7 @@ public class TestHttpClient {
         List<String> links = linkFinder.getLinksFromAPage("https://demo.opencart.com");
         for (String url : links){
             service.execute(new Get(url));
-            /*try {
+            /*try {//use this if you want to see how many threads are runnung
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
