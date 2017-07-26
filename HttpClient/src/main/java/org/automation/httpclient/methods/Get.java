@@ -1,5 +1,6 @@
 package org.automation.httpclient.methods;
 
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.automation.httpclient.HttpRequestDefault;
 
 /**
@@ -9,6 +10,9 @@ import org.automation.httpclient.HttpRequestDefault;
 public class Get extends HttpRequestDefault {
     @Override
     public void perform() {
+
+        client = new DefaultHttpClient();
+
 
     }
 }

@@ -1,5 +1,6 @@
 package org.automation.httpclient;
 
+import org.apache.http.client.HttpClient;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -16,11 +17,13 @@ public abstract class HttpRequestDefault {
     protected long timeout_response = 3000;
     protected boolean isFollowRedirection = false;
 
+    protected HttpClient client;
     public abstract void perform();
 
     protected WebDriver driver;
 
     protected void iniBrowser(){
-        driver
+        driver.manage().window().maximize();
+
     }
 }
