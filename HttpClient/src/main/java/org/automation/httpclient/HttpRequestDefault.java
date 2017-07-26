@@ -25,6 +25,8 @@ public abstract class HttpRequestDefault {
     protected HttpClient client;
     protected HttpResponse response;
     protected int httpResponseCode;
+    protected HttpEntity entity;
+
     public abstract void perform();
 
     protected WebDriver driver;
@@ -37,7 +39,10 @@ public abstract class HttpRequestDefault {
         String protocol = (isHttps)?"https":"http";
         return protocol+"://"+host+":"+port+path;
     }
-    protected String getContent(HttpEntity entity) throws IOException {
+    protected String getContent() throws IOException {
         return EntityUtils.toString(entity);
+    }
+    protected int getStatusCode(){
+        return response.getStatusLine().getStatusCode();
     }
 }

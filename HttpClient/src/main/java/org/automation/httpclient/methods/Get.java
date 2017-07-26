@@ -19,7 +19,6 @@ public class Get extends HttpRequestDefault {
         HttpGet httpGet = new HttpGet(getUrl());
         try {
             response = client.execute(httpGet);
-            httpResponseCode = response.getStatusLine().getStatusCode();
         } catch (IOException e) {
 
             e.printStackTrace();
