@@ -40,7 +40,6 @@ public class Browser {
     private Browser(){}
 
     public static void close(){
-
         driver.close();
         driver.quit();
         driver = null;

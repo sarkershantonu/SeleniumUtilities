@@ -24,6 +24,9 @@ public class Get extends HttpRequestDefault {
             e.printStackTrace();
         }
 
+        if(httpResponseCode!=200){
+            System.out.println("ERROR = "+ httpResponseCode);
+        }else System.out.println("OK");
 
     }
 
