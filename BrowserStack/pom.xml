@@ -14,7 +14,7 @@
     <build>
         <resources>
             <resource>
-                <directory>src/test/resources</directory>
+                <directory>src/main/resources</directory>
                 <!-- <includes>
                      <include>**.*</include>
                  </includes>-->
@@ -33,4 +33,5 @@
         <version>${appium.version}</version>
     </dependency>
 </dependencies>
+
 </project>
