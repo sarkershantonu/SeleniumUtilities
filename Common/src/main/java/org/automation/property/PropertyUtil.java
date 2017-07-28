@@ -84,7 +84,5 @@ public class PropertyUtil {
         loadAllPropertyFromFolder(propertyRoot);
     }
 
-    public static void main(String[] args) throws IOException {
-        new PropertyUtil("./Common/src/main/resources").loadAllPropertyFromFolder();
-    }
+
 }

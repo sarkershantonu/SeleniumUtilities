@@ -1,15 +1,16 @@
 package org.automation.selenium.browserstack;
 
+import org.automation.property.PropertyUtil;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.io.IOException;
 
 /**
  * Created by shantonu on 4/7/16.
  * this class is responsible for all browser stack configuration based capabilities
  */
 public class BrowserStackCapabilities {
-
-
 
     /**
      * @param capabilities => will get to set the value

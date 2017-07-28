@@ -1,7 +1,6 @@
 package org.automation.selenium.browser.local;
 
 
-import org.automation.property.PropertyUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,8 +13,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 
 /**
@@ -91,11 +88,11 @@ public class BrowserFactory {
     }
 
     private static String getDefaultLocalBrowserName() {
-        return System.getProperty("browser.properties", "selenium.browser");
+        return System.getProperty("properties/browser.properties", "selenium.browser");
     }
 
     private static String getIEPath() {
-        return System.getProperty("browser.properties", "selenium.browser.ie.path");
+        return System.getProperty("properties/browser.properties", "selenium.browser.ie.path");
     }
 
 

@@ -3,6 +3,8 @@ package org.automation.selenium.validation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
+
 /**
  * Created by shantonu on 5/19/16.
  * This is responsible for having all test logic for a test element
