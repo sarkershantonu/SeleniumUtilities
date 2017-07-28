@@ -8,50 +8,45 @@ import java.util.Properties;
 
 public class PropertyUtil {
 
-    private static Properties prop;
-    private static String propertyRoot = "/src/main/resources/";
-    private static OutputStream output = null;
-    private static InputStream input = null;
+    private Properties prop;
+    private String propertyRoot;
+    private OutputStream output = null;
+    private InputStream input = null;
 
-    private PropertyUtil(){
-        prop =new Properties();
-    }
-    public static String getSysProperty( String sysProperty) {
-        return System.getProperty(sysProperty);
+    private PropertyUtil() {
+        prop = new Properties();
     }
 
-    public static void setSysProperty( String name,  String value) {
-        System.setProperty(name, value);
+    public PropertyUtil(String propertyFolder) {
+        this();
+        this.propertyRoot = propertyFolder + JavaProperties.FILE_SEPERATOR;
     }
 
-    public static void setProperty(String nameOfPropertyFile, String nameOfProperty, String valueOfProperty) throws IOException {
-        output = new FileOutputStream(nameOfPropertyFile, true);//append mode
+    public void setProperty(String nameOfPropertyFile, String nameOfProperty, String valueOfProperty) throws IOException {
+        output = new FileOutputStream(new File(propertyRoot+nameOfPropertyFile).getAbsoluteFile(), true);//append mode
 
-        if(getProperty(nameOfPropertyFile,nameOfProperty)!=null) {
+        if (getProperty(nameOfPropertyFile, nameOfProperty) != null) {
             prop.setProperty(nameOfProperty, valueOfProperty);
-            prop.store(output, "Added at "+System.currentTimeMillis());
-        }
-        else
-        {
+            prop.store(output, "Added at " + System.currentTimeMillis());
+        } else {
         }
         output.close();
     }
 
-    public static String read(String propertyFileName, String name) throws IOException {
+    public String read(String propertyFileName, String name) throws IOException {
         prop = read(propertyFileName);
         return prop.getProperty(name);
     }
 
-    public static Properties read(String propertyFileName) throws IOException {
+    public Properties read(String propertyFileName) throws IOException {
         prop = new Properties();
-        File currentDirFile = new File(getUserDir());
-        String rootFolder = currentDirFile.getAbsolutePath();
-        InputStream input = new FileInputStream(rootFolder + propertyRoot + propertyFileName);
+        InputStream input = new FileInputStream(propertyRoot + propertyFileName);
         prop.load(input);
         input.close();
         return prop;
     }
-    public static String getProperty(String nameOfPropertyFile, String nameOfProperty) throws IOException{
+
+    public String getProperty(String nameOfPropertyFile, String nameOfProperty) throws IOException {
         input = new FileInputStream(nameOfPropertyFile);
         //if you need to load from class loaders -> Aulternate way
         //InputStream its = this.getClass().getClassLoader().getResourceAsStream(nameOfPropertyFile);
@@ -61,33 +56,26 @@ public class PropertyUtil {
         } else {
             throw new FileNotFoundException(nameOfPropertyFile + " Not Found");
         }
-        return  prop.getProperty(nameOfProperty);
+        return prop.getProperty(nameOfProperty);
     }
-    public static String getSeperator(){
-        return getSysProperty("file.separator");
-    }
-
-    public static String getUserDir(){
-        return getSysProperty("user.dir");
-    }
-
 
     /**
      * Loads all property entry under all property files under a specified path
+     *
      * @param folderPath
      * @throws IOException
      */
-    public static void loadAllPropertyAsSystemProperty(String folderPath) throws IOException {
-        List<String> props = new ArrayList<>();
+    public void loadAllPropertyFromFolder(String folderPath) throws IOException {
         File[] propertyFiles = new File(folderPath).listFiles();
-        for(File aProperty:propertyFiles){
+        for (File aProperty : propertyFiles) {
             Properties p = new Properties();
             p.load(new FileInputStream(aProperty));
-            for(String k:p.stringPropertyNames()){
-                System.setProperty(k,p.getProperty(k));
+            for (String k : p.stringPropertyNames()) {
+                System.setProperty(k, p.getProperty(k));
             }
         }
-
-
+    }
+    public void loadAllPropertyFromFolder() throws IOException {
+        loadAllPropertyFromFolder(propertyRoot);
     }
 }
