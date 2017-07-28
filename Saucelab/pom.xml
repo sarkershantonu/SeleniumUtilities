@@ -11,16 +11,6 @@
 
     <artifactId>saucelab</artifactId>
     <packaging>jar</packaging>
-    <build>
-        <resources>
-            <resource>
-                <directory>src/test/resources</directory>
-                <!-- <includes>
-                     <include>**.*</include>
-                 </includes>-->
-            </resource>
-        </resources>
-    </build>
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

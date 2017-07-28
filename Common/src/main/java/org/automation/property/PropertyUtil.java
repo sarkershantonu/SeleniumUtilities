@@ -8,11 +8,14 @@ import java.util.Properties;
 
 public class PropertyUtil {
 
-    private static Properties prop =new Properties();;
+    private static Properties prop;
     private static String propertyRoot = "/src/main/resources/";
     private static OutputStream output = null;
     private static InputStream input = null;
 
+    private PropertyUtil(){
+        prop =new Properties();
+    }
     public static String getSysProperty( String sysProperty) {
         return System.getProperty(sysProperty);
     }
@@ -34,12 +37,8 @@ public class PropertyUtil {
         output.close();
     }
 
-    public static String read(String propertyFileName, String name) {
-        try {
-            prop = read(propertyFileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static String read(String propertyFileName, String name) throws IOException {
+        prop = read(propertyFileName);
         return prop.getProperty(name);
     }
 
