@@ -23,7 +23,7 @@ public class PropertyUtil {
     }
 
     public void setProperty(String nameOfPropertyFile, String nameOfProperty, String valueOfProperty) throws IOException {
-        output = new FileOutputStream(new File(propertyRoot+nameOfPropertyFile).getAbsoluteFile(), true);//append mode
+        output = new FileOutputStream(new File(propertyRoot + nameOfPropertyFile).getAbsoluteFile(), true);//append mode
 
         if (getProperty(nameOfPropertyFile, nameOfProperty) != null) {
             prop.setProperty(nameOfProperty, valueOfProperty);
@@ -67,15 +67,24 @@ public class PropertyUtil {
      */
     public void loadAllPropertyFromFolder(String folderPath) throws IOException {
         File[] propertyFiles = new File(folderPath).listFiles();
-        for (File aProperty : propertyFiles) {
-            Properties p = new Properties();
-            p.load(new FileInputStream(aProperty));
-            for (String k : p.stringPropertyNames()) {
-                System.setProperty(k, p.getProperty(k));
+        for (File aPropertyFile : propertyFiles) {
+
+            if (aPropertyFile.getName().endsWith(".properties")) {
+                Properties p = new Properties();
+                p.load(new FileInputStream(aPropertyFile));
+                for (String k : p.stringPropertyNames()) {
+                    System.setProperty(k, p.getProperty(k));
+                }
             }
+
         }
     }
+
     public void loadAllPropertyFromFolder() throws IOException {
         loadAllPropertyFromFolder(propertyRoot);
+    }
+
+    public static void main(String[] args) throws IOException {
+        new PropertyUtil("./Common/src/main/resources").loadAllPropertyFromFolder();
     }
 }
