@@ -5,23 +5,31 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.IOException;
+import java.util.Properties;
 
 /**
  * Created by shantonu on 4/7/16.
  * this class is responsible for all browser stack configuration based capabilities
  */
 public class BrowserStackCapabilities {
+    private static Properties prop;
+    static {
+        try {
+            prop = new PropertyUtil("./properties/browserstack").read("browserstack-node.properties");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private BrowserStackCapabilities() {
+    }
 
-    /**
-     * @param capabilities => will get to set the value
-     * @param config       format => osName.browsername.resolution
-     *                     No dot for versions, dot reserverd as seperator
-     *                     COnfig sample => https://www.browserstack.com/automate/java
-     * @return => returned what changed.
-     * Sample 3 configuration given
-     * todo => add as much capability as you can from https://www.browserstack.com/start
-     */
-    public static DesiredCapabilities getCapabilities(DesiredCapabilities capabilities, String config) {
+    public BrowserStackCapabilities (String nodeName){
+
+    }
+
+    public DesiredCapabilities getCapabilities(String config) {
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
 
         if (config == "win7.ie8.1024x768") {
             capabilities.setCapability("browser", "IE");
