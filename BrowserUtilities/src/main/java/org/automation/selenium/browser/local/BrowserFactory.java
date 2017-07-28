@@ -32,14 +32,13 @@ public class BrowserFactory {
     }
 
 
-
     public static WebDriver getABrowser(String browserName) {
-        String os = PropertyUtil.getSysProperty("os.name");
+        String os = System.getProperty("os.name");
         if ("firefox".equals(browserName)) {
             if (os.contains("windows")) {
-                PropertyUtil.setSysProperty("webdriver.firefox.bin", "place where you unzipped firefox executable");
+                System.setProperty("webdriver.firefox.bin", "place where you unzipped firefox executable");
             } else {
-                PropertyUtil.setSysProperty("webdriver.firefox.bin", "/home/shantonu/ff46/firefox");
+                System.setProperty("webdriver.firefox.bin", "/home/shantonu/ff46/firefox");
             }
             aBrowser = new FirefoxDriver();
         } else if ("edge".equals(browserName)) {
@@ -49,7 +48,7 @@ public class BrowserFactory {
         } else if ("ie".equals(browserName)) {
             //File iedriver = new File(getIEPath()); // reading from property //-Dwebdriver.ie.driver=physicall using command line
             File iedriver = new File("Point your Selenium Server exe Path");//todo for your PC
-            PropertyUtil.setSysProperty("webdriver.ie.driver", iedriver.getAbsolutePath());
+            System.setProperty("webdriver.ie.driver", iedriver.getAbsolutePath());
 
             aBrowser = new InternetExplorerDriver();
         } else if ("chrome".equals(browserName)) {
@@ -58,13 +57,13 @@ public class BrowserFactory {
             String pathlunix = "/usr/local/bin/chromedriver";
             ChromeDriverService service;
             if (os.contains("windows")) {
-                PropertyUtil.setSysProperty("webdriver.chrome.driver", pathWindows);
+                System.setProperty("webdriver.chrome.driver", pathWindows);
                 service = new ChromeDriverService.Builder()
                         .usingDriverExecutable(new File(pathlunix))
                         .usingAnyFreePort()
                         .build();
             } else {
-                PropertyUtil.setSysProperty("webdriver.chrome.driver", pathlunix);
+                System.setProperty("webdriver.chrome.driver", pathlunix);
                 service = new ChromeDriverService.Builder()
                         .usingDriverExecutable(new File(pathlunix))
                         .usingAnyFreePort()
@@ -87,27 +86,16 @@ public class BrowserFactory {
     }
 
 
-
     public static WebDriver getDefaultDriver() {
         return getABrowser("chrome");
     }
 
     private static String getDefaultLocalBrowserName() {
-        try {
-            return PropertyUtil.getProperty("browser.properties", "selenium.browser");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return System.getProperty("browser.properties", "selenium.browser");
     }
 
     private static String getIEPath() {
-        try {
-            return PropertyUtil.getProperty("browser.properties", "selenium.browser.ie.path");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return System.getProperty("browser.properties", "selenium.browser.ie.path");
     }
 
 

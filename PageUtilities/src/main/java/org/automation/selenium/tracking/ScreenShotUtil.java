@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.automation.config.ConfigHelper;
 import org.automation.config.FileUtilities;
 
+import org.automation.property.JavaProperties;
 import org.automation.selenium.browser.SeleniumUtilBase;
 import org.automation.selenium.page.PageBase;
 import org.automation.selenium.page.SourceUtil;
@@ -26,7 +27,7 @@ import java.util.Date;
  */
 public class ScreenShotUtil extends SeleniumUtilBase {
 
-    public static String ScreenPath = PropertyUtil.getUserDir()+ConfigHelper.screenshotImagerFolder;//PropertyUtil.getSysProperty("screenshot.folder");
+    public static String ScreenPath = JavaProperties.USER_WORKING_DIR+JavaProperties.FILE_SEPERATOR+ConfigHelper.screenshotImagerFolder;
 
     public byte[] takeScreenShotAsByteArray(){
         return ((TakesScreenshot) this.driver).getScreenshotAs(OutputType.BYTES);
@@ -128,18 +129,18 @@ public class ScreenShotUtil extends SeleniumUtilBase {
         Date screenDate = new Date();
         
         if(ScreenPath!=null){
-            file.append(ScreenPath).append(PropertyUtil.getSeperator());
+            file.append(ScreenPath).append(JavaProperties.FILE_SEPERATOR);
         }
-        file.append(PropertyUtil.getUserDir());
-        file.append(PropertyUtil.getSeperator())
+        file.append(JavaProperties.USER_WORKING_DIR);
+        file.append(JavaProperties.FILE_SEPERATOR)
                 .append("target")
-                .append(PropertyUtil.getSeperator())
+                .append(JavaProperties.FILE_SEPERATOR)
                 .append(date.format(screenDate));
         if(isError){
-            file.append(PropertyUtil.getSeperator()).append("error_");
+            file.append(JavaProperties.FILE_SEPERATOR).append("error_");
         }else
         {
-            file.append(PropertyUtil.getSeperator()).append("screenshot_");
+            file.append(JavaProperties.FILE_SEPERATOR).append("screenshot_");
         }
         file.append(testname+"_").append(time.format(screenDate));
         file = FileUtilities.trimLimit(file);
