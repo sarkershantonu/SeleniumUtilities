@@ -25,19 +25,18 @@ public class BrowserFactory {
     }
     private static WebDriver driver;
     private static String remoteUrl ="";
-    private static String username = System.getProperty("browserstack.user");
-    private static String key=System.getProperty("browserstack.key");
-    private static String server=System.getProperty("browserstack.server");
-
+    private static String username = prop.getProperty("browserstack.user");
+    private static String key=prop.getProperty("browserstack.key");
+    private static String server=prop.getProperty("browserstack.server");
+    private static String capabilityNodeId = prop.getProperty("browserstack.capability.node");
 
     public static WebDriver getDriver(){
         if(driver==null) {
             try {
-                driver = new RemoteWebDriver(new URL("http://" + username + ":" + key + "@" + server + "/wd/hub"), new BrowserStackCapabilities("node1").getCapabilities("willBeRemoved"));
+                driver = new RemoteWebDriver(new URL("http://" + username + ":" + key + "@" + server + "/wd/hub"), new BrowserStackCapabilities(capabilityNodeId).getCapabilities());
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
-
         }
         return driver;
     }
