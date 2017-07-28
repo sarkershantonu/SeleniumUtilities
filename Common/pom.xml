@@ -13,7 +13,7 @@
     <build>
         <resources>
             <resource>
-                <directory>properties</directory>
+                <directory>../properties</directory>
                 <!-- <includes>
                      <include>**.*</include>
                  </includes>-->

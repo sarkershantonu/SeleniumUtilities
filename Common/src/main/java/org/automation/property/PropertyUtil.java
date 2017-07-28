@@ -2,8 +2,6 @@ package org.automation.property;
 
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 public class PropertyUtil {
@@ -22,7 +20,7 @@ public class PropertyUtil {
         this.propertyRoot = propertyFolder + JavaProperties.FILE_SEPERATOR;
     }
 
-    public void setProperty(String nameOfPropertyFile, String nameOfProperty, String valueOfProperty) throws IOException {
+    public void saveProperty(String nameOfPropertyFile, String nameOfProperty, String valueOfProperty) throws IOException {
         output = new FileOutputStream(new File(propertyRoot + nameOfPropertyFile).getAbsoluteFile(), true);//append mode
 
         if (getProperty(nameOfPropertyFile, nameOfProperty) != null) {
@@ -59,13 +57,27 @@ public class PropertyUtil {
         return prop.getProperty(nameOfProperty);
     }
 
+    public void loadPropertyFile(String propertyFileName) throws IOException {
+        Properties p = new Properties();
+        p.load(new FileInputStream(new File(propertyRoot+propertyFileName)));
+        for (String k : p.stringPropertyNames()) {
+            System.setProperty(k, p.getProperty(k));
+        }
+    }
+    public void loadPropertyWithAbsulatePath(String propertyFileName) throws IOException {
+        Properties p = new Properties();
+        p.load(new FileInputStream(new File(propertyFileName)));
+        for (String k : p.stringPropertyNames()) {
+            System.setProperty(k, p.getProperty(k));
+        }
+    }
     /**
      * Loads all property entry under all property files under a specified path
      *
      * @param folderPath
      * @throws IOException
      */
-    public void loadAllPropertyFromFolder(String folderPath) throws IOException {
+    public void loadAllDefaultProperties(String folderPath) throws IOException {
         File[] propertyFiles = new File(folderPath).listFiles();
         for (File aPropertyFile : propertyFiles) {
 
@@ -80,8 +92,21 @@ public class PropertyUtil {
         }
     }
 
-    public void loadAllPropertyFromFolder() throws IOException {
-        loadAllPropertyFromFolder(propertyRoot);
+    public void loadAllDefaultProperties() throws IOException {
+        loadAllDefaultProperties(propertyRoot);
+    }
+
+    /***
+     * Use this incase you need to load from property path files
+     * Specifically needed for environment properties
+     * @throws IOException
+     */
+    public void loadUserProperties() throws IOException {
+        Properties p = new Properties();
+        p.load(new FileInputStream(propertyRoot+"user.properties"));
+        for (String k : p.stringPropertyNames()) {
+           loadPropertyWithAbsulatePath(new File(p.getProperty(k)).getAbsolutePath());
+        }
     }
 
 
