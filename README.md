@@ -4,6 +4,7 @@ Angular JS support is separated from these helpers.
 
 # Target
 Use any of the project to use in test project
+These are helpers beside utilitilies
 # Project Structure 
 Its mmultimidule maven project. 
 Each mmodule represent different utilitie
