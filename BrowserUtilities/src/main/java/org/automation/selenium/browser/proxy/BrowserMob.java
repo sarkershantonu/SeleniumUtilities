@@ -17,7 +17,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
  */
 public class BrowserMob {
 
-    public WebDriver getFirefoxWithProxy(String host, int proxy_port, String addReffer){
+    public WebDriver getFirefoxWithProxy(String host, int proxy_port, final String addReffer) {
         ProxyServer server = new ProxyServer(proxy_port); //net.lightbody.bmp.proxy.ProxyServer;
         server.start();
         server.setCaptureHeaders(true);
@@ -25,18 +25,19 @@ public class BrowserMob {
         proxy.setHttpProxy(host).setSslProxy(host);
         server.addRequestInterceptor(
                 new RequestInterceptor() {
-            @Override
-            public void process(BrowserMobHttpRequest browserMobHttpRequest, Har har) {
-                browserMobHttpRequest.addRequestHeader("Referer", addReffer);
-            }
-        });
+                    @Override
+                    public void process(BrowserMobHttpRequest browserMobHttpRequest, Har har) {
+                        browserMobHttpRequest.addRequestHeader("Referer", addReffer);
+                    }
+                });
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.PROXY, proxy);
         return new FirefoxDriver(capabilities);
     }
+
     //https://sites.google.com/a/chromium.org/chromedriver/capabilities
-    public WebDriver getChromeWithProxy(){
+    public WebDriver getChromeWithProxy() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments();//=> this part need to simplify with testing.
         return new ChromeDriver();//// TODO: 8/19/16
