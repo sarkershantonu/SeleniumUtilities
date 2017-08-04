@@ -35,6 +35,8 @@
         <lombok.version>1.16.8</lombok.version>
         <saucerest.version>1.0.32</saucerest.version>
         <lombok.plugin.version>1.16.8.0</lombok.plugin.version>
+        <jsoup.version>1.10.2</jsoup.version>
+        <ashot.version>1.5.2</ashot.version>
     </properties>
     <build>
         <plugins>
