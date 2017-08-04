@@ -8,7 +8,10 @@
     <artifactId>browserstack</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
+    <properties>
+        <selenium.version>3.4.0</selenium.version>
+        <appium.version>3.4.1</appium.version>
+    </properties>
 
     <build>
         <plugins>
