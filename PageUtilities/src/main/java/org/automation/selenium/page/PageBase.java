@@ -9,6 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.annotation.Nullable;
+import java.util.function.Function;
+
 public abstract class PageBase {
 
     @Getter @Setter protected String name;
@@ -44,28 +47,31 @@ public abstract class PageBase {
         PageFactory.initElements(driver,t);
     }
 
-    /**
-     * Todo => instead of checking only one Text, we need to implement all page item found loading. Which ensures page loading not just source parsing.
-     */
-    public PageBase verifyLoaded(){
-       WebDriverWait wait = new WebDriverWait(driver, Browser.DEFAULT_WAIT_4_PAGE);
-        wait.until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                return driver.getPageSource().contains(pageLoadedText);
-            }
-        });
-        return this;
-    }
-    /**
+     /**
      * This will wati for another default time our time until curree url contains page url.
      * Avoid wait object referrencing for quick call, we will follow this
      */
     public PageBase verifyUrl(){
-        (new WebDriverWait(driver, Browser.DEFAULT_WAIT_4_PAGE)).until(new ExpectedCondition<Boolean>(){
+        new WebDriverWait(driver, Browser.DEFAULT_WAIT_4_PAGE).until((Function<? super WebDriver, Boolean>) new ExpectedCondition<Boolean>(){
             public Boolean apply(WebDriver driver) {
                 return driver.getCurrentUrl() .contains(url);
             }
         });
+        return this;
+    }
+
+    public PageBase veify(){
+        WebDriverWait wait = new WebDriverWait(driver, Browser.DEFAULT_WAIT_4_PAGE);
+
+        wait.until((Function<? super WebDriver, Boolean>) new ExpectedCondition<Boolean>(){
+            @Nullable
+            @Override
+            public Boolean apply(@Nullable WebDriver driver) {
+                return driver.getPageSource().contains(pageLoadedText);
+            }
+        });
+
+
         return this;
     }
 
