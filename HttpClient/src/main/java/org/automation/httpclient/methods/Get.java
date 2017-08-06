@@ -26,7 +26,7 @@ public class Get extends HttpRequestDefault {
 
         HttpGet httpGet = new HttpGet(getUrl());
         try {
-            System.out.println(getUrl());
+
             response = client.execute(httpGet);
 
         } catch (IOException e) {
