@@ -24,6 +24,8 @@ public class Post extends HttpRequestDefault {
         client = new DefaultHttpClient();
         HttpPost post = new HttpPost(getUrl());
 
+        
+
         try {
             System.out.println(getUrl());
             response = client.execute(post);
