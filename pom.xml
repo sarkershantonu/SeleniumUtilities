@@ -22,6 +22,7 @@
         <module>PageScan</module>
         <module>HttpClient</module>
         <module>TestExamples</module>
+        <module>Tracking</module>
     </modules>
     <properties>
         <activiti.version>5.19.0.1</activiti.version>
