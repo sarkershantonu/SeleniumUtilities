@@ -23,3 +23,6 @@ Each mmodule represent different utilitie
 
 # Screenshot using : 
 - html2canvas( https://github.com/niklasvh/html2canvas/releases
+
+# Todo 
+- update on all utilities 
